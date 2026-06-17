@@ -40,6 +40,13 @@
   <url><loc>https://dennis1968z.github.io/bitspace/en/contact.html</loc><priority>0.6</priority></url>
 
   <url>
+    <loc>https://dennis1968z.github.io/bitspace/agents.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dennis1968z.github.io/bitspace/agents.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dennis1968z.github.io/bitspace/en/agents.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://dennis1968z.github.io/bitspace/en/agents.html</loc><priority>0.7</priority></url>
+  <url>
     <loc>https://dennis1968z.github.io/bitspace/insights.html</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dennis1968z.github.io/bitspace/insights.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://dennis1968z.github.io/bitspace/en/insights.html"/>
