@@ -23,12 +23,26 @@
   .ok{display:none;background:var(--red-soft);border:1px solid #e9c8c1;color:var(--red-dark);padding:14px;border-radius:var(--r);margin-bottom:18px;font-weight:600}
   @media(max-width:1000px){.form-wrap{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
 </style>
+<link rel="icon" href="../assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BitSpace">
+<meta property="og:title" content="Contact BitSpace · Book a demo / Sales inquiry">
+<meta property="og:description" content="Contact the BitSpace sales and solutions team to book an OPC OS demo or discuss an OCI-based cloud infrastructure plan. Singapore & Silicon Valley.">
+<meta property="og:url" content="https://dennis1968z.github.io/bitspace/en/contact.html">
+<meta property="og:image" content="https://dennis1968z.github.io/bitspace/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact BitSpace · Book a demo / Sales inquiry">
+<meta name="twitter:description" content="Contact the BitSpace sales and solutions team to book an OPC OS demo or discuss an OCI-based cloud infrastructure plan. Singapore & Silicon Valley.">
+<meta name="twitter:image" content="https://dennis1968z.github.io/bitspace/assets/og.png">
+<link rel="alternate" hreflang="en" href="https://dennis1968z.github.io/bitspace/en/contact.html">
+<link rel="alternate" hreflang="zh-CN" href="https://dennis1968z.github.io/bitspace/contact.html">
+<link rel="alternate" hreflang="x-default" href="https://dennis1968z.github.io/bitspace/">
 </head>
 <body>
 
 <div class="topbar">
   <div class="wrap">
-    <a href="#">Partner Login</a><a href="#">Console</a><a href="../contact.html">中文</a><a href="contact.html">Contact Sales</a>
+    <a href="contact.html">Partner Login</a><a href="contact.html">Console</a><a href="../contact.html">中文</a><a href="contact.html">Contact Sales</a>
   </div>
 </div>
 <header class="nav">
@@ -42,7 +56,7 @@
       <a href="about.html">About</a>
     </nav>
     <div class="nav-cta">
-      <a href="#" class="login">Sign in</a>
+      <a href="contact.html" class="login">Join waitlist</a>
       <a href="contact.html" class="btn btn-red">Start free</a>
     </div>
     <button class="burger" aria-label="menu"><span></span><span></span><span></span></button>
@@ -61,18 +75,18 @@
   <div class="wrap form-wrap">
     <div>
       <div class="ok" id="ok">✓ Thanks for reaching out! Our team will be in touch shortly. (Demo form — not actually sent.)</div>
-      <form id="cform">
+      <form id="cform" method="POST">
         <div class="row2">
-          <div class="field"><label>Name *</label><input required type="text" placeholder="Your name"></div>
-          <div class="field"><label>Company / Project</label><input type="text" placeholder="Company or project"></div>
+          <div class="field"><label>Name *</label><input required name="name" type="text" placeholder="Your name"></div>
+          <div class="field"><label>Company / Project</label><input name="company" type="text" placeholder="Company or project"></div>
         </div>
         <div class="row2">
-          <div class="field"><label>Email *</label><input required type="email" placeholder="you@example.com"></div>
-          <div class="field"><label>Phone / WeChat</label><input type="text" placeholder="Optional"></div>
+          <div class="field"><label>Email *</label><input required name="email" type="email" placeholder="you@example.com"></div>
+          <div class="field"><label>Phone / WeChat</label><input name="phone" type="text" placeholder="Optional"></div>
         </div>
         <div class="field">
           <label>I'm interested in *</label>
-          <select required>
+          <select required name="interest">
             <option value="">Please select</option>
             <option>OPC OS platform demo</option>
             <option>OCI-based cloud infrastructure</option>
@@ -81,7 +95,7 @@
             <option>Partner / investor</option>
           </select>
         </div>
-        <div class="field"><label>Tell us more</label><textarea placeholder="Briefly describe your use case and needs…"></textarea></div>
+        <div class="field"><label>Tell us more</label><textarea name="message" placeholder="Briefly describe your use case and needs…"></textarea></div>
         <button type="submit" class="btn btn-red">Submit</button>
       </form>
     </div>
@@ -120,7 +134,7 @@
       <div><h5>Resources</h5><a href="#">Docs</a><a href="#">Status</a><a href="#">Trust Center</a><a href="#">Blog</a></div>
     </div>
     <div class="foot-bottom">
-      <div>© 2026 BitSpace Pte. Ltd. · Singapore &amp; Silicon Valley</div>
+      <div>© 2026 BitSpace Pte. Ltd. · Singapore &amp; Silicon Valley · <a href="privacy.html" style="color:#b9b4ac">Privacy</a> · <a href="terms.html" style="color:#b9b4ac">Terms</a> · <a href="cookies.html" style="color:#b9b4ac">Cookies</a></div>
       <div class="badges"><span>ISO 27001 · in progress</span><span>SOC 2 Type II · in progress</span><span>GDPR</span><span>OCI Partner</span></div>
     </div>
   </div>
@@ -128,11 +142,26 @@
 
 <script src="../assets/js/main.js"></script>
 <script>
-  document.getElementById('cform').addEventListener('submit',function(e){
+  // Create a free form at https://formspree.io and paste its ID below (replace REPLACE_WITH_FORM_ID).
+  // Set the form's inbox to Dennis@bitspace.sg so submissions land in your email.
+  var FORM_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_FORM_ID";
+  var form = document.getElementById('cform');
+  var ok = document.getElementById('ok');
+  form.setAttribute('action', FORM_ENDPOINT);
+  form.addEventListener('submit', function(e){
     e.preventDefault();
-    document.getElementById('ok').style.display='block';
-    this.reset();
-    window.scrollTo({top:document.querySelector('.form-wrap').offsetTop-100,behavior:'smooth'});
+    function show(msg){ ok.textContent = msg; ok.style.display='block';
+      window.scrollTo({top:document.querySelector('.form-wrap').offsetTop-100,behavior:'smooth'}); }
+    if (FORM_ENDPOINT.indexOf('REPLACE_WITH') !== -1){
+      show('⚠️ Form not configured yet: add your Formspree form ID in contact.html. Or email Dennis@bitspace.sg directly.');
+      return;
+    }
+    fetch(FORM_ENDPOINT, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}})
+      .then(function(res){
+        if(res.ok){ show('✓ Thanks! We\'ll be in touch via Dennis@bitspace.sg shortly.'); form.reset(); }
+        else { show('Submission failed — please retry or email Dennis@bitspace.sg.'); }
+      })
+      .catch(function(){ show('Network error — please retry or email Dennis@bitspace.sg.'); });
   });
 </script>
 </body>

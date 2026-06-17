@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dennis1968z.github.io/bitspace/sitemap.xml

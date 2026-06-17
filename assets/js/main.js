@@ -1,3 +1,27 @@
+// Cookie consent banner (bilingual, auto-detects page language)
+(function () {
+  if (localStorage.getItem('bs_cookie_consent')) return;
+  var en = document.documentElement.lang && document.documentElement.lang.indexOf('en') === 0;
+  var prefix = en ? '' : '../'; // links resolve from root; en pages live one level down
+  var inEn = location.pathname.indexOf('/en/') !== -1;
+  var cookiesHref = inEn ? 'cookies.html' : 'cookies.html';
+  var txt = en
+    ? 'We use essential cookies to run this site and, with your consent, analytics cookies to improve it. See our <a href="' + cookiesHref + '">Cookie Policy</a>.'
+    : '我们使用必要 Cookie 来运行本站，并在您同意后使用分析类 Cookie 以改进体验。详见<a href="' + cookiesHref + '">Cookie 政策</a>。';
+  var accept = en ? 'Accept' : '接受';
+  var reject = en ? 'Essential only' : '仅必要';
+  var bar = document.createElement('div');
+  bar.id = 'cookie-banner';
+  bar.innerHTML = '<div class="cb-inner"><p>' + txt + '</p><div class="cb-btns">' +
+    '<button class="reject">' + reject + '</button>' +
+    '<button class="accept">' + accept + '</button></div></div>';
+  document.body.appendChild(bar);
+  requestAnimationFrame(function () { bar.classList.add('show'); });
+  function close(v) { localStorage.setItem('bs_cookie_consent', v); bar.classList.remove('show'); }
+  bar.querySelector('.accept').addEventListener('click', function () { close('all'); });
+  bar.querySelector('.reject').addEventListener('click', function () { close('essential'); });
+})();
+
 // Mobile nav toggle
 document.addEventListener('click', e => {
   const b = e.target.closest('.burger');

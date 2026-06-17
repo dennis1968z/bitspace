@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://dennis1968z.github.io/bitspace/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dennis1968z.github.io/bitspace/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dennis1968z.github.io/bitspace/en/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://dennis1968z.github.io/bitspace/cloud.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dennis1968z.github.io/bitspace/cloud.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dennis1968z.github.io/bitspace/en/cloud.html"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dennis1968z.github.io/bitspace/opc.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dennis1968z.github.io/bitspace/opc.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dennis1968z.github.io/bitspace/en/opc.html"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dennis1968z.github.io/bitspace/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dennis1968z.github.io/bitspace/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dennis1968z.github.io/bitspace/en/about.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dennis1968z.github.io/bitspace/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dennis1968z.github.io/bitspace/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dennis1968z.github.io/bitspace/en/contact.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <url><loc>https://dennis1968z.github.io/bitspace/en/</loc><priority>0.9</priority></url>
+  <url><loc>https://dennis1968z.github.io/bitspace/en/cloud.html</loc><priority>0.8</priority></url>
+  <url><loc>https://dennis1968z.github.io/bitspace/en/opc.html</loc><priority>0.8</priority></url>
+  <url><loc>https://dennis1968z.github.io/bitspace/en/about.html</loc><priority>0.6</priority></url>
+  <url><loc>https://dennis1968z.github.io/bitspace/en/contact.html</loc><priority>0.6</priority></url>
+
+  <url><loc>https://dennis1968z.github.io/bitspace/privacy.html</loc><priority>0.4</priority></url>
+  <url><loc>https://dennis1968z.github.io/bitspace/terms.html</loc><priority>0.4</priority></url>
+  <url><loc>https://dennis1968z.github.io/bitspace/cookies.html</loc><priority>0.4</priority></url>
+
+</urlset>
