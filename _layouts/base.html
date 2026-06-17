@@ -15,6 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ page.title }}">
 <meta name="twitter:image" content="{{ '/assets/og.png' | absolute_url }}">
+<link rel="alternate" type="application/rss+xml" title="BitSpace {% if page.lang == 'en' %}Insights{% else %}洞察{% endif %}" href="{% if page.lang == 'en' %}{{ '/en/feed.xml' | relative_url }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>

@@ -22,6 +22,27 @@
   bar.querySelector('.reject').addEventListener('click', function () { close('essential'); });
 })();
 
+// Latest insights on the homepage — fetches insights.json and renders cards
+(function () {
+  var box = document.getElementById('latest-insights');
+  if (!box) return;
+  var lang = box.getAttribute('data-lang') || 'zh';
+  var feed = box.getAttribute('data-feed') || 'insights.json';
+  fetch(feed).then(function (r) { return r.json(); }).then(function (items) {
+    var rows = items.filter(function (it) { return it.lang === lang; }).slice(0, 3);
+    if (!rows.length) return;
+    var more = lang === 'en' ? 'Read more' : '阅读全文';
+    box.innerHTML = rows.map(function (it) {
+      var tag = it.tag ? ' · <span style="color:var(--red);font-weight:700">' + it.tag + '</span>' : '';
+      return '<a class="card" href="' + it.url + '" style="display:block">' +
+        '<div class="muted" style="font-size:.8rem;margin-bottom:8px">' + it.date + tag + '</div>' +
+        '<h3 style="margin-bottom:10px">' + it.title + '</h3>' +
+        '<p class="muted" style="font-size:.92rem">' + (it.excerpt || '') + '</p>' +
+        '<span class="link-arrow" style="margin-top:8px">' + more + '</span></a>';
+    }).join('');
+  }).catch(function () { /* leave the "view all" link as fallback */ });
+})();
+
 // Mobile nav toggle
 document.addEventListener('click', e => {
   const b = e.target.closest('.burger');

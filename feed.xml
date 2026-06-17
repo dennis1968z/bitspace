@@ -1,0 +1,24 @@
+---
+layout: null
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>BitSpace 洞察</title>
+<link>{{ '/insights.html' | absolute_url }}</link>
+<atom:link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/rss+xml"/>
+<description>{{ site.description }}</description>
+<language>zh-CN</language>
+{% assign posts = site.posts | where: "lang", "zh" | sort: "date" | reverse %}
+{% for post in posts %}
+<item>
+<title>{{ post.title | xml_escape }}</title>
+<link>{{ post.url | absolute_url }}</link>
+<guid>{{ post.url | absolute_url }}</guid>
+<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+<description>{{ post.excerpt | strip_html | xml_escape }}</description>
+</item>
+{% endfor %}
+</channel>
+</rss>
