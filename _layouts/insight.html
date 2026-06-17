@@ -1,0 +1,18 @@
+---
+layout: base
+---
+<div class="legal">
+  <div class="updated">{{ page.date | date: "%Y-%m-%d" }}{% if page.tag %} · {{ page.tag }}{% endif %}</div>
+  <h1>{{ page.title }}</h1>
+  {% if page.excerpt %}<p class="lede" style="margin-bottom:24px">{{ page.excerpt }}</p>{% endif %}
+
+  {{ content }}
+
+  <p style="margin-top:44px">
+    {% if page.lang == 'en' %}
+      <a href="{{ '/en/insights.html' | relative_url }}" class="link-arrow">Back to Insights</a>
+    {% else %}
+      <a href="{{ '/insights.html' | relative_url }}" class="link-arrow">返回洞察列表</a>
+    {% endif %}
+  </p>
+</div>

@@ -1,0 +1,31 @@
+---
+layout: base
+lang: zh
+title: 洞察 · 一人公司方法论与案例
+description: BitSpace 洞察库——持续积累的一人公司创业方法论、Agent 工程实践与真实案例复盘。
+permalink: /insights.html
+---
+<section class="phero">
+  <div class="wrap">
+    <div class="eyebrow">洞察 · Insights</div>
+    <h1>一人公司的方法论与案例积累</h1>
+    <p>我们把 Harness Engineering、Agent 拆解、模型路由与真实 OPC 案例的复盘持续沉淀于此——这既是我们的思考，也是你可复用的 Playbook。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="grid-3">
+      {% assign posts = site.posts | where: "lang", "zh" | sort: "date" | reverse %}
+      {% for post in posts %}
+      <a class="card" href="{{ post.url | relative_url }}" style="display:block">
+        <div class="muted" style="font-size:.8rem;margin-bottom:8px">{{ post.date | date: "%Y-%m-%d" }}{% if post.tag %} · <span style="color:var(--red);font-weight:700">{{ post.tag }}</span>{% endif %}</div>
+        <h3 style="margin-bottom:10px">{{ post.title }}</h3>
+        <p class="muted" style="font-size:.92rem">{{ post.excerpt | strip_html | truncate: 90 }}</p>
+        <span class="link-arrow" style="margin-top:8px">阅读全文</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% if posts.size == 0 %}<p class="muted">更多文章即将发布。</p>{% endif %}
+  </div>
+</section>

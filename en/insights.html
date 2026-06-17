@@ -1,0 +1,31 @@
+---
+layout: base
+lang: en
+title: Insights · One-Person Company playbook & cases
+description: The BitSpace Insights library — an accumulating playbook of one-person-company methodology, agent engineering and real case studies.
+permalink: /en/insights.html
+---
+<section class="phero">
+  <div class="wrap">
+    <div class="eyebrow">Insights</div>
+    <h1>An accumulating playbook for one-person companies</h1>
+    <p>We continuously distill Harness Engineering, agent decomposition, model routing and real OPC case studies here — our thinking, and a playbook you can reuse.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="grid-3">
+      {% assign posts = site.posts | where: "lang", "en" | sort: "date" | reverse %}
+      {% for post in posts %}
+      <a class="card" href="{{ post.url | relative_url }}" style="display:block">
+        <div class="muted" style="font-size:.8rem;margin-bottom:8px">{{ post.date | date: "%Y-%m-%d" }}{% if post.tag %} · <span style="color:var(--red);font-weight:700">{{ post.tag }}</span>{% endif %}</div>
+        <h3 style="margin-bottom:10px">{{ post.title }}</h3>
+        <p class="muted" style="font-size:.92rem">{{ post.excerpt | strip_html | truncate: 90 }}</p>
+        <span class="link-arrow" style="margin-top:8px">Read more</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% if posts.size == 0 %}<p class="muted">More articles coming soon.</p>{% endif %}
+  </div>
+</section>

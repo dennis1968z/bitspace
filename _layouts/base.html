@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="{% if page.lang == 'en' %}en{% else %}zh-CN{% endif %}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ page.title }} · BitSpace</title>
+<meta name="description" content="{{ page.excerpt | default: page.description | default: site.description | strip_html | strip_newlines | truncate: 150 }}">
+<link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}">
+<meta property="og:type" content="{% if page.layout == 'insight' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="BitSpace">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.excerpt | default: page.description | default: site.description | strip_html | strip_newlines | truncate: 150 }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ '/assets/og.png' | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:image" content="{{ '/assets/og.png' | absolute_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+{% if page.lang == 'en' %}
+<div class="topbar">
+  <div class="wrap">
+    <a href="{{ '/contact.html' | relative_url }}">Partner Login</a>
+    <a href="{{ '/contact.html' | relative_url }}">Console</a>
+    <a href="{{ '/insights.html' | relative_url }}">中文</a>
+    <a href="{{ '/contact.html' | relative_url }}">Contact Sales</a>
+  </div>
+</div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="{{ '/en/index.html' | relative_url }}" class="logo"><span class="mark">B</span> Bit<b>Space</b></a>
+    <nav class="nav-links">
+      <a href="{{ '/en/cloud.html' | relative_url }}">Cloud Infrastructure</a>
+      <a href="{{ '/en/opc.html' | relative_url }}">OPC OS Platform</a>
+      <a href="{{ '/en/about.html' | relative_url }}">About</a>
+      <a href="{{ '/en/insights.html' | relative_url }}" class="active">Insights</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="{{ '/contact.html' | relative_url }}" class="login">Join waitlist</a>
+      <a href="{{ '/en/contact.html' | relative_url }}" class="btn btn-red">Start free</a>
+    </div>
+    <button class="burger" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+{% else %}
+<div class="topbar">
+  <div class="wrap">
+    <a href="{{ '/contact.html' | relative_url }}">合作伙伴登录</a>
+    <a href="{{ '/contact.html' | relative_url }}">控制台 Console</a>
+    <a href="{{ '/en/insights.html' | relative_url }}">English</a>
+    <a href="{{ '/contact.html' | relative_url }}">联系销售</a>
+  </div>
+</div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="{{ '/index.html' | relative_url }}" class="logo"><span class="mark">B</span> Bit<b>Space</b></a>
+    <nav class="nav-links">
+      <a href="{{ '/cloud.html' | relative_url }}">云基础设施</a>
+      <a href="{{ '/opc.html' | relative_url }}">OPC OS 平台</a>
+      <a href="{{ '/about.html' | relative_url }}">关于我们</a>
+      <a href="{{ '/insights.html' | relative_url }}" class="active">洞察</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="{{ '/contact.html' | relative_url }}" class="login">加入等待名单</a>
+      <a href="{{ '/contact.html' | relative_url }}" class="btn btn-red">免费试用</a>
+    </div>
+    <button class="burger" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+{% endif %}
+
+{{ content }}
+
+{% if page.lang == 'en' %}
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-bottom" style="border-top:0;padding-top:0">
+      <div>© 2026 BitSpace Pte. Ltd. · Singapore &amp; Silicon Valley · <a href="{{ '/en/privacy.html' | relative_url }}" style="color:#b9b4ac">Privacy</a> · <a href="{{ '/en/terms.html' | relative_url }}" style="color:#b9b4ac">Terms</a> · <a href="{{ '/en/cookies.html' | relative_url }}" style="color:#b9b4ac">Cookies</a></div>
+      <div class="badges"><span>OCI Partner</span><a href="{{ '/en/index.html' | relative_url }}" style="color:#b9b4ac">Home</a></div>
+    </div>
+  </div>
+</footer>
+{% else %}
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-bottom" style="border-top:0;padding-top:0">
+      <div>© 2026 BitSpace Pte. Ltd. · Singapore &amp; Silicon Valley · <a href="{{ '/privacy.html' | relative_url }}" style="color:#b9b4ac">隐私政策</a> · <a href="{{ '/terms.html' | relative_url }}" style="color:#b9b4ac">服务条款</a> · <a href="{{ '/cookies.html' | relative_url }}" style="color:#b9b4ac">Cookie 政策</a></div>
+      <div class="badges"><span>OCI Partner</span><a href="{{ '/index.html' | relative_url }}" style="color:#b9b4ac">返回首页</a></div>
+    </div>
+  </div>
+</footer>
+{% endif %}
+
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

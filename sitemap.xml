@@ -39,6 +39,18 @@
   <url><loc>https://dennis1968z.github.io/bitspace/en/about.html</loc><priority>0.6</priority></url>
   <url><loc>https://dennis1968z.github.io/bitspace/en/contact.html</loc><priority>0.6</priority></url>
 
+  <url>
+    <loc>https://dennis1968z.github.io/bitspace/insights.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dennis1968z.github.io/bitspace/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dennis1968z.github.io/bitspace/en/insights.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://dennis1968z.github.io/bitspace/en/insights.html</loc><priority>0.7</priority></url>
+  <url><loc>https://dennis1968z.github.io/bitspace/insights/regwatch/</loc><priority>0.6</priority></url>
+  <url><loc>https://dennis1968z.github.io/bitspace/insights/opc-lite/</loc><priority>0.6</priority></url>
+  <url><loc>https://dennis1968z.github.io/bitspace/en/insights/regwatch/</loc><priority>0.5</priority></url>
+  <url><loc>https://dennis1968z.github.io/bitspace/en/insights/opc-lite/</loc><priority>0.5</priority></url>
+
   <url><loc>https://dennis1968z.github.io/bitspace/privacy.html</loc><priority>0.4</priority></url>
   <url><loc>https://dennis1968z.github.io/bitspace/terms.html</loc><priority>0.4</priority></url>
   <url><loc>https://dennis1968z.github.io/bitspace/cookies.html</loc><priority>0.4</priority></url>
