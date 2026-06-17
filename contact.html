@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>联系 BitSpace · 预约演示 / 销售咨询</title>
+<meta name="description" content="联系 BitSpace 销售与解决方案团队，预约 OPC OS 演示或咨询基于 OCI 的云基础设施方案。新加坡 & 硅谷两地。">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .form-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:7px}
+  .field input,.field select,.field textarea{
+    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);
+    font-family:inherit;font-size:.95rem;background:#fff;color:var(--ink);
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--red);box-shadow:0 0 0 3px var(--red-soft)}
+  .field textarea{min-height:120px;resize:vertical}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .contact-side .blk{padding:24px;border:1px solid var(--line);border-radius:10px;margin-bottom:18px;background:#fff}
+  .contact-side h4{margin-bottom:6px}
+  .contact-side p{color:var(--gray);font-size:.92rem}
+  .ok{display:none;background:var(--red-soft);border:1px solid #e9c8c1;color:var(--red-dark);padding:14px;border-radius:var(--r);margin-bottom:18px;font-weight:600}
+  @media(max-width:1000px){.form-wrap{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="#">合作伙伴登录</a><a href="#">控制台 Console</a><a href="#">English</a><a href="contact.html">联系销售</a>
+  </div>
+</div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo"><span class="mark">B</span> Bit<b>Space</b></a>
+    <nav class="nav-links">
+      <a href="cloud.html">云基础设施</a>
+      <a href="opc.html">OPC OS 平台</a>
+      <a href="cloud.html#oci">为什么选 OCI</a>
+      <a href="opc.html#pricing">定价</a>
+      <a href="about.html">关于我们</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#" class="login">登录</a>
+      <a href="contact.html" class="btn btn-red">免费试用</a>
+    </div>
+    <button class="burger" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="phero">
+  <div class="wrap">
+    <div class="eyebrow">联系我们</div>
+    <h1>让我们聊聊您的下一步</h1>
+    <p>无论是预约 OPC OS 演示、咨询 OCI 云架构方案，还是探讨合作伙伴计划，我们的团队都会在 1 个工作日内回复。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap form-wrap">
+    <div>
+      <div class="ok" id="ok">✓ 感谢您的提交！我们的团队会尽快与您联系。（演示表单，未实际发送）</div>
+      <form id="cform">
+        <div class="row2">
+          <div class="field"><label>姓名 *</label><input required type="text" placeholder="您的姓名"></div>
+          <div class="field"><label>公司 / 项目</label><input type="text" placeholder="公司或项目名称"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>邮箱 *</label><input required type="email" placeholder="you@example.com"></div>
+          <div class="field"><label>电话 / 微信</label><input type="text" placeholder="可选"></div>
+        </div>
+        <div class="field">
+          <label>我感兴趣的是 *</label>
+          <select required>
+            <option value="">请选择</option>
+            <option>OPC OS 平台演示</option>
+            <option>基于 OCI 的云基础设施</option>
+            <option>FTaaS 模型微调服务</option>
+            <option>Enterprise 白标 / 服务商合作</option>
+            <option>合作伙伴 / 投资人</option>
+          </select>
+        </div>
+        <div class="field"><label>需求描述</label><textarea placeholder="简单描述您的业务场景与需求……"></textarea></div>
+        <button type="submit" class="btn btn-red">提交</button>
+      </form>
+    </div>
+    <div class="contact-side">
+      <div class="blk">
+        <h4>🇸🇬 新加坡 · 亚太总部</h4>
+        <p>BitSpace Pte. Ltd.<br>主节点 · 合规实体 · 销售</p>
+      </div>
+      <div class="blk">
+        <h4>🇺🇸 硅谷 · 研发中心</h4>
+        <p>Silicon Valley, California<br>研发 · 产品 · 模型生态</p>
+      </div>
+      <div class="blk">
+        <h4>📧 邮箱</h4>
+        <p>销售咨询：contact@bitspace.cloud<br>合作伙伴：partner@bitspace.cloud</p>
+      </div>
+      <div class="blk">
+        <h4>⏱️ 响应时间</h4>
+        <p>我们承诺在 1 个工作日内回复所有咨询。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><span class="mark">B</span> Bit<b style="color:#ff7a63">Space</b></a>
+        <p>OCI 亚太区合作伙伴，为全球一人公司创业者提供云基础设施与智能操作系统。</p>
+        <div class="foot-loc"><div><b>新加坡</b>亚太总部 · 主节点</div><div><b>硅谷</b>研发中心</div></div>
+      </div>
+      <div><h5>云基础设施</h5><a href="cloud.html">弹性计算</a><a href="cloud.html">GPU 算力</a><a href="cloud.html">对象与块存储</a><a href="cloud.html#oci">为什么选 OCI</a></div>
+      <div><h5>OPC OS 平台</h5><a href="opc.html">Agent Matrix</a><a href="opc.html#verticals">5 大垂直服务</a><a href="opc.html#architecture">架构</a><a href="opc.html#pricing">定价</a></div>
+      <div><h5>公司</h5><a href="about.html">关于 BitSpace</a><a href="about.html#team">团队</a><a href="contact.html">联系我们</a><a href="#">合作伙伴计划</a></div>
+      <div><h5>资源</h5><a href="#">文档</a><a href="#">状态页</a><a href="#">合规中心</a><a href="#">博客</a></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 BitSpace Pte. Ltd. · Singapore &amp; Silicon Valley</div>
+      <div class="badges"><span>ISO 27001</span><span>SOC 2 Type II</span><span>GDPR</span><span>OCI Partner</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+  document.getElementById('cform').addEventListener('submit',function(e){
+    e.preventDefault();
+    document.getElementById('ok').style.display='block';
+    this.reset();
+    window.scrollTo({top:document.querySelector('.form-wrap').offsetTop-100,behavior:'smooth'});
+  });
+</script>
+</body>
+</html>
