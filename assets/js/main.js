@@ -43,6 +43,25 @@
   }).catch(function () { /* leave the "view all" link as fallback */ });
 })();
 
+// Agent catalogue scenario filter
+(function () {
+  var grid = document.getElementById('agent-grid');
+  if (!grid) return;
+  var chips = document.querySelectorAll('.filter-chip');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      var f = chip.getAttribute('data-filter');
+      grid.querySelectorAll('.agent-card').forEach(function (card) {
+        var sc = (card.getAttribute('data-scenarios') || '').split(' ');
+        var show = (f === 'all') || sc.indexOf(f) !== -1;
+        card.classList.toggle('hide', !show);
+      });
+    });
+  });
+})();
+
 // Mobile nav toggle
 document.addEventListener('click', e => {
   const b = e.target.closest('.burger');

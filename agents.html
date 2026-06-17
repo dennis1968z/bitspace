@@ -1,15 +1,19 @@
+---
+layout: null
+lang: zh
+---
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Agent 目录 · Harness OPC Agent Matrix | BitSpace</title>
-<meta name="description" content="BitSpace OPC OS 推荐 Agent 目录：运行在基于 OCI 的 Harness Agent Matrix 之上，涵盖协调编排、财务支付、流程自动化、内容营销、研发、合规与数据等职能。">
+<meta name="description" content="BitSpace OPC OS 推荐 Agent 目录：运行在基于 OCI 的 Harness Agent Matrix 之上，按场景筛选协调编排、财务支付、流程自动化、内容营销、研发、合规与数据等 Agent 及其集成工具。">
 <link rel="icon" href="assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BitSpace">
 <meta property="og:title" content="Agent 目录 · Harness OPC Agent Matrix | BitSpace">
-<meta property="og:description" content="OPC OS 推荐 Agent 目录：协调编排、财务支付、流程自动化、内容营销、研发、合规与数据。">
+<meta property="og:description" content="按场景筛选推荐 Agent 及其集成工具：协调编排、财务支付、流程自动化、内容营销、研发、合规与数据。">
 <meta property="og:url" content="https://dennis1968z.github.io/bitspace/agents.html">
 <meta property="og:image" content="https://dennis1968z.github.io/bitspace/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -49,92 +53,39 @@
   <div class="wrap">
     <div class="eyebrow">Agent 目录 · Harness OPC Agent Matrix</div>
     <h1>开箱即用的虚拟 Agent 团队</h1>
-    <p>以下 Agent 运行在基于 Oracle Cloud Infrastructure 的 BitSpace Harness Agent Matrix 之上。平台按你的目标动态招募 20–50 个 Agent 协作——从协调编排、财务支付，到流程自动化、内容、研发、合规与数据，覆盖一家公司的核心职能。</p>
-    <div class="ctas">
-      <a href="opc.html#architecture" class="btn btn-red">了解工作机制</a>
-      <a href="contact.html" class="btn btn-ghost-light">预约演示</a>
-    </div>
+    <p>以下 Agent 运行在基于 Oracle Cloud Infrastructure 的 BitSpace Harness Agent Matrix 之上。按你的垂直场景筛选，查看每个 Agent 的职责与集成工具——平台会为你动态招募 20–50 个 Agent 协作。</p>
   </div>
 </section>
 
-<!-- 协调与编排 -->
 <section>
   <div class="wrap">
-    <div class="shead"><div class="eyebrow">协调与编排 · Orchestration</div><h2>把目标拆成可执行的流水线</h2></div>
-    <div class="grid-3">
-      <div class="card"><div class="ic">👔</div><h3>CEO 协调者</h3><p>拆解高层目标（Story）、设定优先级、分配资源、仲裁冲突，是整个 Matrix 的总调度。</p><div class="tag-list"><span>编排</span><span>决策</span><span>核心</span></div></div>
-      <div class="card"><div class="ic">🧩</div><h3>流程编排 Agent</h3><p>把多 Agent、多工具串成自动化工作流，通过 Webhook 触发、按条件分支、失败回滚。</p><div class="tag-list"><span>编排</span><span>Webhook</span><span>Sandbox</span></div></div>
-      <div class="card"><div class="ic">📋</div><h3>项目经理</h3><p>Story 拆解、任务分配、进度追踪与汇报，确保每一轮工作循环按计划推进。</p><div class="tag-list"><span>流程</span><span>追踪</span></div></div>
+    <div class="filter-bar">
+      <button class="filter-chip active" data-filter="all">全部</button>
+      {% for s in site.data.agents.scenarios %}
+      <button class="filter-chip" data-filter="{{ s.key }}">{{ s.zh }}</button>
+      {% endfor %}
+    </div>
+
+    <div class="grid-3" id="agent-grid">
+      {% for a in site.data.agents.agents %}
+      <div class="card agent-card" data-scenarios="{{ a.scenarios | join: ' ' }}">
+        <div class="ic">{{ a.icon }}</div>
+        <span class="cat-chip">{{ a.cat_zh }}</span>
+        <h3>{{ a.name_zh }}</h3>
+        <p>{{ a.desc_zh }}</p>
+        <div class="tool-tags">
+          <span class="tt-label">集成工具</span>
+          {% for t in a.tools %}<span>{{ t }}</span>{% endfor %}
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
 
-<!-- 财务与支付 -->
 <section class="section-soft">
   <div class="wrap">
-    <div class="shead"><div class="eyebrow">财务与支付 · Finance &amp; Payments</div><h2>从收款到对账，自动闭环</h2></div>
-    <div class="grid-3">
-      <div class="card"><div class="ic">💳</div><h3>支付与收款 Agent</h3><p>对接 Stripe / PayPal / 微信支付，自动收款、生成发票、对账与退款处理。</p><div class="tag-list"><span>支付</span><span>Stripe</span><span>PayPal</span></div></div>
-      <div class="card"><div class="ic">📒</div><h3>财务分析师</h3><p>成本核算、利润预测、单位经济学分析与月度财务报表。</p><div class="tag-list"><span>财务</span><span>报表</span><span>BI</span></div></div>
-      <div class="card"><div class="ic">🧾</div><h3>计费与订阅 Agent</h3><p>管理套餐、用量计费、订阅续费与账单，支持多币种（USD/CNY/SGD）。</p><div class="tag-list"><span>计费</span><span>订阅</span><span>多币种</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 战略与数据 -->
-<section>
-  <div class="wrap">
-    <div class="shead"><div class="eyebrow">战略与数据 · Strategy &amp; Data</div><h2>洞察驱动决策</h2></div>
-    <div class="grid-3">
-      <div class="card"><div class="ic">🎯</div><h3>策略顾问</h3><p>市场定位、定价策略、客户选择与产品方向决策。</p><div class="tag-list"><span>策略</span></div></div>
-      <div class="card"><div class="ic">🔬</div><h3>研究分析师</h3><p>产品调研、竞品扫描、市场报告与关键词分析。</p><div class="tag-list"><span>研究</span></div></div>
-      <div class="card"><div class="ic">📊</div><h3>数据分析师</h3><p>BI 分析与洞察挖掘，转化漏斗、用户行为与运营指标。</p><div class="tag-list"><span>数据</span><span>BI</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 内容与营销 -->
-<section class="section-soft">
-  <div class="wrap">
-    <div class="shead"><div class="eyebrow">内容与营销 · Content &amp; Marketing</div><h2>持续产出与分发</h2></div>
-    <div class="grid-4">
-      <div class="card"><div class="ic">✍️</div><h3>内容写手</h3><p>文案、邮件、脚本与社媒内容的策划与撰写。</p></div>
-      <div class="card"><div class="ic">🔍</div><h3>SEO 专家</h3><p>关键词聚类、内容优化与页面优化建议。</p></div>
-      <div class="card"><div class="ic">📣</div><h3>社交媒体 Agent</h3><p>YouTube / TikTok / X / LinkedIn 发布、排期与互动。</p></div>
-      <div class="card"><div class="ic">🎨</div><h3>设计师</h3><p>缩略图、配图与品牌视觉素材生成。</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 研发与自动化 -->
-<section>
-  <div class="wrap">
-    <div class="shead"><div class="eyebrow">研发与自动化 · Engineering</div><h2>把重复工作交给代码</h2></div>
-    <div class="grid-3">
-      <div class="card"><div class="ic">💻</div><h3>开发工程师</h3><p>代码生成、API 集成、建站与功能实现。</p><div class="tag-list"><span>研发</span></div></div>
-      <div class="card"><div class="ic">⚙️</div><h3>自动化工程师</h3><p>自动化脚本、工具链集成、定时任务与 CI/CD。</p><div class="tag-list"><span>自动化</span><span>流程</span></div></div>
-      <div class="card"><div class="ic">🧪</div><h3>测试工程师</h3><p>用例生成、回归测试与质量验证。</p><div class="tag-list"><span>QA</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 合规与客户 -->
-<section class="section-soft">
-  <div class="wrap">
-    <div class="shead"><div class="eyebrow">合规与客户 · Compliance &amp; Customer</div><h2>守住边界，服务好客户</h2></div>
-    <div class="grid-4">
-      <div class="card"><div class="ic">⚖️</div><h3>法务顾问</h3><p>合规检查、合同审核、风险提示与建议。</p></div>
-      <div class="card"><div class="ic">🛡️</div><h3>合规监控 Agent</h3><p>持续监控 EPA/FDA/GDPR 等监管动态，生成合规简报（RegWatch 模式）。</p></div>
-      <div class="card"><div class="ic">💬</div><h3>客服专员</h3><p>客户邮件/IM 自动应答、工单处理与满意度跟踪。</p></div>
-      <div class="card"><div class="ic">🧑‍💼</div><h3>人力资源 Agent</h3><p>按需"招募"与编排更多 Agent，管理角色与权限。</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 说明 -->
-<section>
-  <div class="wrap">
-    <div class="panel" style="background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;padding:32px">
+    <div class="panel" style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:32px">
       <h3 style="margin-bottom:12px">关于这份目录</h3>
       <p class="muted" style="margin-bottom:10px">以上为 OPC OS 推荐的 Agent 角色，并非固定清单——平台支持按你的垂直场景动态招募与自定义 Agent。每个 Agent 通过统一的 <b>Credential Vault</b> 加密访问外部工具，并受权限沙箱约束，你可精细控制每个 Agent 对每个工具的读/写权限。</p>
       <p class="muted">所有 Agent 都在 <a href="opc.html#architecture" style="color:var(--red)">Think → Do → Check → Improve</a> 工作循环中协作，由 <a href="opc.html" style="color:var(--red)">智能模型路由</a> 在 L1–L4 之间为每个任务选择最合适的模型。</p>

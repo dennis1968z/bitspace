@@ -1,0 +1,213 @@
+# Agent Matrix catalogue — single source of truth.
+# Add / edit / remove an agent here; agents.html (CN) and en/agents.html (EN) re-render automatically.
+# scenarios keys: content | ecommerce | ai-tools | education | enterprise
+
+scenarios:
+  - key: content
+    zh: "内容创作者"
+    en: "Content Creator"
+  - key: ecommerce
+    zh: "跨境电商"
+    en: "Cross-border E-commerce"
+  - key: ai-tools
+    zh: "AI 工具"
+    en: "AI Tools"
+  - key: education
+    zh: "教育咨询"
+    en: "Education & Consulting"
+  - key: enterprise
+    zh: "企业服务"
+    en: "Enterprise Service"
+
+agents:
+  # ---- 协调与编排 ----
+  - icon: "👔"
+    name_zh: "CEO 协调者"
+    name_en: "CEO Orchestrator"
+    cat_zh: "协调与编排"
+    cat_en: "Orchestration"
+    desc_zh: "拆解高层目标（Story）、设定优先级、分配资源、仲裁冲突，是整个 Matrix 的总调度。"
+    desc_en: "Decomposes high-level goals (Stories), sets priorities, allocates resources and resolves conflicts."
+    tools: ["Scheduler", "Webhook", "内部消息总线"]
+    scenarios: [content, ecommerce, ai-tools, education, enterprise]
+  - icon: "🧩"
+    name_zh: "流程编排 Agent"
+    name_en: "Workflow Orchestrator"
+    cat_zh: "协调与编排"
+    cat_en: "Orchestration"
+    desc_zh: "把多 Agent、多工具串成自动化工作流，Webhook 触发、条件分支、失败回滚。"
+    desc_en: "Chains agents and tools into automated workflows — Webhook triggers, branches, rollback."
+    tools: ["Webhook", "Zapier", "REST API", "Cron"]
+    scenarios: [content, ecommerce, ai-tools, education, enterprise]
+  - icon: "📋"
+    name_zh: "项目经理"
+    name_en: "Project Manager"
+    cat_zh: "协调与编排"
+    cat_en: "Orchestration"
+    desc_zh: "Story 拆解、任务分配、进度追踪与汇报，确保每轮工作循环按计划推进。"
+    desc_en: "Story breakdown, task allocation, progress tracking and reporting."
+    tools: ["Notion", "Linear", "Slack"]
+    scenarios: [content, ecommerce, ai-tools, education, enterprise]
+
+  # ---- 财务与支付 ----
+  - icon: "💳"
+    name_zh: "支付与收款 Agent"
+    name_en: "Payments Agent"
+    cat_zh: "财务与支付"
+    cat_en: "Finance & Payments"
+    desc_zh: "对接收款渠道，自动收款、生成发票、对账与退款处理。"
+    desc_en: "Integrates payment rails for collection, invoicing, reconciliation and refunds."
+    tools: ["Stripe", "PayPal", "WeChat Pay"]
+    scenarios: [content, ecommerce, ai-tools, education, enterprise]
+  - icon: "📒"
+    name_zh: "财务分析师"
+    name_en: "Finance Analyst"
+    cat_zh: "财务与支付"
+    cat_en: "Finance & Payments"
+    desc_zh: "成本核算、利润预测、单位经济学分析与月度财务报表。"
+    desc_en: "Cost accounting, profit forecasting, unit-economics analysis and monthly reports."
+    tools: ["Stripe API", "Google Sheets", "QuickBooks"]
+    scenarios: [content, ecommerce, ai-tools, education, enterprise]
+  - icon: "🧾"
+    name_zh: "计费与订阅 Agent"
+    name_en: "Billing & Subscriptions"
+    cat_zh: "财务与支付"
+    cat_en: "Finance & Payments"
+    desc_zh: "管理套餐、用量计费、订阅续费与账单，支持多币种（USD/CNY/SGD）。"
+    desc_en: "Manages plans, usage-based billing, renewals and invoices — multi-currency."
+    tools: ["Stripe Billing", "PayPal", "Invoice API"]
+    scenarios: [content, ecommerce, ai-tools, education, enterprise]
+
+  # ---- 战略与数据 ----
+  - icon: "🎯"
+    name_zh: "策略顾问"
+    name_en: "Strategy Advisor"
+    cat_zh: "战略与数据"
+    cat_en: "Strategy & Data"
+    desc_zh: "市场定位、定价策略、客户选择与产品方向决策。"
+    desc_en: "Market positioning, pricing, customer selection and product direction."
+    tools: ["Web Search", "Market Data"]
+    scenarios: [content, ecommerce, ai-tools, education, enterprise]
+  - icon: "🔬"
+    name_zh: "研究分析师"
+    name_en: "Research Analyst"
+    cat_zh: "战略与数据"
+    cat_en: "Strategy & Data"
+    desc_zh: "产品调研、竞品扫描、市场报告与关键词分析。"
+    desc_en: "Product research, competitive scans, market reports and keywords."
+    tools: ["Web Search", "SerpAPI", "Qdrant"]
+    scenarios: [content, ecommerce, ai-tools, education, enterprise]
+  - icon: "📊"
+    name_zh: "数据分析师"
+    name_en: "Data Analyst"
+    cat_zh: "战略与数据"
+    cat_en: "Strategy & Data"
+    desc_zh: "BI 分析与洞察挖掘，转化漏斗、用户行为与运营指标。"
+    desc_en: "BI and insight mining — funnels, user behavior and operating metrics."
+    tools: ["PostgreSQL", "BigQuery", "Grafana"]
+    scenarios: [content, ecommerce, ai-tools, education, enterprise]
+
+  # ---- 内容与营销 ----
+  - icon: "✍️"
+    name_zh: "内容写手"
+    name_en: "Content Writer"
+    cat_zh: "内容与营销"
+    cat_en: "Content & Marketing"
+    desc_zh: "文案、邮件、脚本与社媒内容的策划与撰写。"
+    desc_en: "Copy, emails, scripts and social content — planning and drafting."
+    tools: ["Google Docs", "Notion"]
+    scenarios: [content, ecommerce, ai-tools, education]
+  - icon: "🔍"
+    name_zh: "SEO 专家"
+    name_en: "SEO Specialist"
+    cat_zh: "内容与营销"
+    cat_en: "Content & Marketing"
+    desc_zh: "关键词聚类、内容优化与页面优化建议。"
+    desc_en: "Keyword clustering, content and on-page optimization."
+    tools: ["Search Console", "Ahrefs"]
+    scenarios: [content, ecommerce, enterprise]
+  - icon: "📣"
+    name_zh: "社交媒体 Agent"
+    name_en: "Social Media Agent"
+    cat_zh: "内容与营销"
+    cat_en: "Content & Marketing"
+    desc_zh: "多平台发布、排期与互动。"
+    desc_en: "Multi-platform publishing, scheduling and engagement."
+    tools: ["YouTube", "TikTok", "X", "LinkedIn"]
+    scenarios: [content, ai-tools, education, ecommerce]
+  - icon: "🎨"
+    name_zh: "设计师"
+    name_en: "Designer"
+    cat_zh: "内容与营销"
+    cat_en: "Content & Marketing"
+    desc_zh: "缩略图、配图与品牌视觉素材生成。"
+    desc_en: "Thumbnails, imagery and brand visual assets."
+    tools: ["Image Gen", "Figma"]
+    scenarios: [content, ai-tools, education]
+
+  # ---- 研发与自动化 ----
+  - icon: "💻"
+    name_zh: "开发工程师"
+    name_en: "Engineer"
+    cat_zh: "研发与自动化"
+    cat_en: "Engineering"
+    desc_zh: "代码生成、API 集成、建站与功能实现。"
+    desc_en: "Code generation, API integration, site building and feature delivery."
+    tools: ["GitHub", "GitLab", "REST API"]
+    scenarios: [ai-tools, enterprise]
+  - icon: "⚙️"
+    name_zh: "自动化工程师"
+    name_en: "Automation Engineer"
+    cat_zh: "研发与自动化"
+    cat_en: "Engineering"
+    desc_zh: "自动化脚本、工具链集成、定时任务与 CI/CD。"
+    desc_en: "Automation scripts, toolchain integration, scheduled jobs and CI/CD."
+    tools: ["Webhook", "Cron", "GitHub Actions", "Shopify"]
+    scenarios: [ai-tools, enterprise, ecommerce]
+  - icon: "🧪"
+    name_zh: "测试工程师"
+    name_en: "QA Engineer"
+    cat_zh: "研发与自动化"
+    cat_en: "Engineering"
+    desc_zh: "用例生成、回归测试与质量验证。"
+    desc_en: "Test-case generation, regression testing and quality validation."
+    tools: ["CI/CD", "Playwright"]
+    scenarios: [ai-tools, enterprise]
+
+  # ---- 合规与客户 ----
+  - icon: "⚖️"
+    name_zh: "法务顾问"
+    name_en: "Legal Counsel"
+    cat_zh: "合规与客户"
+    cat_en: "Compliance & Customer"
+    desc_zh: "合规检查、合同审核、风险提示与建议。"
+    desc_en: "Compliance checks, contract review, risk flags and advice."
+    tools: ["Reg DB", "Qdrant"]
+    scenarios: [ecommerce, enterprise, education]
+  - icon: "🛡️"
+    name_zh: "合规监控 Agent"
+    name_en: "Compliance Monitor"
+    cat_zh: "合规与客户"
+    cat_en: "Compliance & Customer"
+    desc_zh: "持续监控 EPA/FDA/GDPR 等监管动态，生成合规简报（RegWatch 模式）。"
+    desc_en: "Watches EPA/FDA/GDPR changes and produces compliance briefings (RegWatch pattern)."
+    tools: ["EPA/FDA Feeds", "GDPR", "RSS"]
+    scenarios: [ecommerce, enterprise]
+  - icon: "💬"
+    name_zh: "客服专员"
+    name_en: "Support Agent"
+    cat_zh: "合规与客户"
+    cat_en: "Compliance & Customer"
+    desc_zh: "客户邮件/IM 自动应答、工单处理与满意度跟踪。"
+    desc_en: "Auto-responds to customer email/IM, handles tickets and tracks satisfaction."
+    tools: ["Gmail", "Outlook", "Telegram", "Intercom"]
+    scenarios: [content, ecommerce, ai-tools, education, enterprise]
+  - icon: "🧑‍💼"
+    name_zh: "人力资源 Agent"
+    name_en: "HR Agent"
+    cat_zh: "合规与客户"
+    cat_en: "Compliance & Customer"
+    desc_zh: "按需招募与编排更多 Agent，管理角色与权限。"
+    desc_en: "Recruits and orchestrates more agents on demand; manages roles and permissions."
+    tools: ["Agent Registry", "IAM"]
+    scenarios: [content, ecommerce, ai-tools, education, enterprise]
