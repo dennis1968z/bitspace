@@ -1,7 +1,7 @@
 title: BitSpace
 description: OCI 亚太区合作伙伴 · 一人公司操作系统 OPC OS
-url: https://dennis1968z.github.io
-baseurl: /bitspace
+url: https://bitspace.sg
+baseurl: ""
 
 # Jekyll powers the /insights blog. Existing .html pages have no front matter,
 # so Jekyll copies them through unchanged.
